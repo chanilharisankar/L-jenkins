@@ -1,22 +1,31 @@
 pipeline {
     agent any 
     stages {
-        stage('Stage 1') {
+        stage('Unit test') {
             steps {
-                echo 'Hello world! Stage 1' 
+                echo 'Running unit tests'
+                echo 'Running Contract tests'
             }
         }
-        stage('Stage 2') {
+        stage('Build') {
             steps {
-                parallel(
-                    a: { echo "Stage 2 This is branch a" },
-                    b: { echo "Stage 2 This is branch b" }
-                    )
+                echo 'building...'
+                echo 'push artifect to artifacts repository'
             }
         }
-        stage('Stage 3') {
+        stage('Api test') {
             steps {
-                echo 'Hello world! Stage 3' 
+                echo 'Running API tests in docker'
+                }
+        }
+        stage('Deploy test environment') {
+            steps {
+                echo 'deploying to test environment'
+            }
+        }
+        stage('Functional test') {
+            steps {
+                echo 'Running Functional test'
             }
         }
     }
