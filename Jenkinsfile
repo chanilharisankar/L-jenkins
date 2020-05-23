@@ -19,8 +19,7 @@ pipeline {
                 dir('run-here') {
                     git url: 'https://github.com/chanilharisankar/bootcamp-automation.git'
                 }
-                sh 'cd run-here'
-                sh 'ls -al'
+                sh 'bash run-here/run-api-test.sh'
                 }
         }
         
