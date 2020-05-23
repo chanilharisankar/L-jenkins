@@ -16,17 +16,12 @@ pipeline {
         stage('Api test') {
             steps {
                 echo 'Running API tests in docker'
+                dir('CalibrationResults') {
+                    git url: 'https://github.com/chanilharisankar/bootcamp-automation.git'
+                }
+                ls -al
                 }
         }
-        stage('Deploy test environment') {
-            steps {
-                echo 'deploying to test environment'
-            }
-        }
-        stage('Functional test') {
-            steps {
-                echo 'Running Functional test'
-            }
-        }
+        
     }
 }
