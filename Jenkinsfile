@@ -19,8 +19,8 @@ pipeline {
                 dir('CalibrationResults') {
                     git url: 'https://github.com/chanilharisankar/bootcamp-automation.git'
                 }
-                sh 'pwd'
-                // sh 'bash run-api-test.sh'
+                sh 'cd CalibrationResults'
+                sh 'bash run-api-test.sh'
                 }
         }
         
