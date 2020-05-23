@@ -19,7 +19,6 @@ pipeline {
                 dir('CalibrationResults') {
                     git url: 'https://github.com/chanilharisankar/bootcamp-automation.git'
                 }
-                ls -al
                 }
         }
         
