@@ -26,7 +26,7 @@ pipeline {
         }
         stage('read archive') {
             steps {
-                copyArtifacts filter: 'artifect.txt'
+                copyArtifacts filter: 'artifect.txt', projectName: '${JOB_NAME}'
                 sh 'cat artifect.txt'
                 }
         }
