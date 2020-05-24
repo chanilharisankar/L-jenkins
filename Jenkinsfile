@@ -29,7 +29,6 @@ pipeline {
                 copyArtifacts filter: 'artifect.txt'
                 sh 'cat artifect.txt'
                 }
-            }
         }
         stage('UI test') {
             steps {
