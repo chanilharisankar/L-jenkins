@@ -36,6 +36,5 @@ pipeline {
                 sh 'bash run-here/run-ui-test.sh'
                 }
         }
-        
     }
 }
