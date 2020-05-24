@@ -33,4 +33,9 @@ pipeline {
                 }
         }
     }
+    post {
+        always {
+            archiveArtifacts artifacts: 'artifect.txt', onlyIfSuccessful: true
+        }
+    }
 }
