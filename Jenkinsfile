@@ -24,10 +24,8 @@ pipeline {
         }
         stage('Deploy') {
             steps {
-                script {
-                    timeout(time: 10, unit: 'MINUTES') {
+                script {      
                     input(id: "Deploy", message: "Deploy ${params.project_name}?", ok: 'Deploy')
-              }
             }
         }
 
