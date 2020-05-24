@@ -22,6 +22,15 @@ pipeline {
                 sh 'bash run-here/run-api-test.sh'
                 }
         }
+        stage('Deploy') {
+            steps {
+                script {
+                    timeout(time: 10, unit: 'MINUTES') {
+                    input(id: "Deploy", message: "Deploy ${params.project_name}?", ok: 'Deploy')
+              }
+            }
+        }
+
         stage('UI test') {
             steps {
                 echo 'Running UI tests in docker'
