@@ -13,5 +13,13 @@ pipeline {
                 echo 'push artifect to artifacts repository'
             }
         }
+        stage('Deploy') {
+            steps {
+                script {
+                    timeout(time: 10, unit: 'MINUTES') {
+                    input(id: "Deploy", message: "Deploy ${params.project_name}?", ok: 'Deploy')
+              }
+            }
+        }
     }
 }
