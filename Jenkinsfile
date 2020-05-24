@@ -11,6 +11,7 @@ pipeline {
             steps {
                 echo 'building...'
                 sh 'bash build.sh'
+                archiveArtifacts artifacts: 'artifect.txt'
             }
         }
         stage('Deploy') {
