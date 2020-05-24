@@ -18,6 +18,7 @@ pipeline {
                 script {
                     timeout(time: 10, unit: 'MINUTES') {
                     input(id: "Deploy", message: "Deploy ${params.project_name}?", ok: 'Deploy')
+                    sh 'yooo got approval'
                 }
             }
             }
