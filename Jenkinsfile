@@ -21,6 +21,14 @@ pipeline {
                 }
             }
         }
-    }
+        stage('UI test') {
+            steps {
+                echo 'Running UI tests in docker'
+                dir('uitests') {
+                    git url: 'https://github.com/chanilharisankar/bootcamp-automation.git'
+                }
+                sh 'bash run-here/run-ui-test.sh'
+                }
+        }
     }
 }
