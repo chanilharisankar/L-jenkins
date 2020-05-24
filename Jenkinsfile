@@ -10,7 +10,7 @@ pipeline {
         stage('Build') {
             steps {
                 echo 'building...'
-                buildCode()
+                sh 'bash build.sh'
             }
         }
         stage('Deploy') {
@@ -33,9 +33,4 @@ pipeline {
                 }
         }
     }
-}
-
-void buildCode() {
-    echo 'push artifect to artifacts repository'
-    echo 'this is artifect' >> artifacts.txt
 }
