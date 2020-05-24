@@ -20,9 +20,15 @@ pipeline {
                     timeout(time: 1, unit: 'MINUTES') {
                     input(id: "Deploy", message: "Deploy ${params.project_name}?", ok: 'Deploy')
                     echo 'yooo deploying'
-                    cat artifect.txt
                 }
             }
+            }
+        }
+        stage('read archive') {
+            steps {
+                copyArtifacts filter: 'artifect.txt'
+                sh 'cat artifect.txt'
+                }
             }
         }
         stage('UI test') {
@@ -35,9 +41,4 @@ pipeline {
                 }
         }
     }
-    // post {
-    //     always {
-    //         archiveArtifacts artifacts: 'artifect.txt', onlyIfSuccessful: true
-    //     }
-    // }
 }
