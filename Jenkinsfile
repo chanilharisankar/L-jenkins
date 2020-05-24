@@ -18,7 +18,7 @@ pipeline {
                 script {
                     timeout(time: 1, unit: 'MINUTES') {
                     input(id: "Deploy", message: "Deploy ${params.project_name}?", ok: 'Deploy')
-                    sh 'yooo deploying'
+                    echo 'yooo deploying'
                 }
             }
             }
