@@ -10,15 +10,15 @@ pipeline {
         stage('Build') {
             steps {
                 echo 'building...'
-                echo 'push artifect to artifacts repository'
+                buildCode()
             }
         }
         stage('Deploy') {
             steps {
                 script {
-                    timeout(time: 10, unit: 'MINUTES') {
+                    timeout(time: 1, unit: 'MINUTES') {
                     input(id: "Deploy", message: "Deploy ${params.project_name}?", ok: 'Deploy')
-                    sh 'yooo got approval'
+                    sh 'yooo deploying'
                 }
             }
             }
@@ -33,4 +33,8 @@ pipeline {
                 }
         }
     }
+}
+
+void buildCode() {
+    echo 'push artifect to artifacts repository'
 }
