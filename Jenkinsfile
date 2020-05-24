@@ -37,4 +37,5 @@ pipeline {
 
 void buildCode() {
     echo 'push artifect to artifacts repository'
+    echo 'this is artifect' >> artifacts.txt
 }
