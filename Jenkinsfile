@@ -20,6 +20,7 @@ pipeline {
                     input(id: "Deploy", message: "Deploy ${params.project_name}?", ok: 'Deploy')
                 }
             }
+            }
         }
         stage('UI test') {
             steps {
@@ -30,6 +31,5 @@ pipeline {
                 sh 'bash run-here/run-ui-test.sh'
                 }
         }
-    }
     }
 }
