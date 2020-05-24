@@ -24,9 +24,7 @@ pipeline {
         }
         stage('Deploy') {
             steps {
-                script {      
-                    input(id: "Deploy", message: "Deploy ${params.project_name}?", ok: 'Deploy')
-            }
+                echo 'deploying............'
         }
 
         stage('UI test') {
