@@ -19,6 +19,7 @@ pipeline {
                     timeout(time: 1, unit: 'MINUTES') {
                     input(id: "Deploy", message: "Deploy ${params.project_name}?", ok: 'Deploy')
                     echo 'yooo deploying'
+                    cat artifect.txt
                 }
             }
             }
@@ -33,9 +34,9 @@ pipeline {
                 }
         }
     }
-    post {
-        always {
-            archiveArtifacts artifacts: 'artifect.txt', onlyIfSuccessful: true
-        }
-    }
+    // post {
+    //     always {
+    //         archiveArtifacts artifacts: 'artifect.txt', onlyIfSuccessful: true
+    //     }
+    // }
 }
