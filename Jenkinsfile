@@ -22,16 +22,16 @@ pipeline {
         stage('API test') {
             steps {
                 echo 'Running API tests in docker'
-                dir('uitests') {
+                dir('api-tests') {
                     git url: 'https://gitlab.com/saurav.gupta/basic-rest-assured.git'
                 }
-                sh 'mvn test'
+                sh 'cd api-tests && mvn test'
                 }
         }
         stage('UI test') {
             steps {
                 echo 'Running UI tests in docker'
-                dir('uitests') {
+                dir('ui-tests') {
                     git url: 'https://github.com/chanilharisankar/bootcamp-automation.git'
                 }
                 sh 'bash run-here/run-ui-test.sh'
