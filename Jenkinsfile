@@ -19,7 +19,6 @@ pipeline {
                 }
             }
             }
-        }
         stage('API test') {
             steps {
                 echo 'Running API tests in docker'
