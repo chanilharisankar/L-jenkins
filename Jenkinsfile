@@ -25,7 +25,7 @@ pipeline {
                 dir('api-tests') {
                     git url: 'https://gitlab.com/saurav.gupta/basic-rest-assured.git'
                 }
-                sh 'cd api-tests && mvn test'
+                sh 'cd api-tests && mvn clean test -DsuiteXmlFile=testng.xml'
                 }
         }
         stage('UI test') {
